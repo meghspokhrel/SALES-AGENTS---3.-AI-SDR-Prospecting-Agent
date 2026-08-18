@@ -1,284 +1,794 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OrionPulse — AI SDR / Prospecting Agent</title>
-<meta name="description" content="OrionPulse AI SDR and Prospecting Agent — find, research, score and engage high-fit prospects.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#071526;--navy:#08192d;--navy2:#10253d;--blue:#435fd1;--blue2:#7285dc;--green:#24966b;--amber:#c88727;--red:#bd5862;--bg:#f3f5f8;--white:#fff;--line:#dde4ec;--muted:#748194;--soft:#f8fafc;--shadow:0 24px 70px rgba(8,25,45,.10)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--bg);line-height:1.45}
-h1,h2,h3,h4{font-family:Manrope,sans-serif;letter-spacing:-.035em}
-button,input,select{font:inherit}
-a{text-decoration:none;color:inherit}
-.container{width:min(1220px,92%);margin:auto}
-.nav{height:72px;position:fixed;inset:0 0 auto;z-index:100;background:rgba(243,245,248,.86);backdrop-filter:blur(22px);border-bottom:1px solid rgba(8,25,45,.07)}
-.navin{height:100%;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:10px;font-family:Manrope;font-weight:800}
-.logo{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;color:#fff;background:linear-gradient(145deg,#0b223d,#687ddd);box-shadow:0 9px 24px rgba(67,95,209,.22)}
-.links{display:flex;gap:24px;font-size:11px;font-weight:700;color:#657386}
-.links a:hover{color:var(--ink)}
-.navbtn{background:var(--navy);color:#fff;padding:10px 15px;border-radius:10px;font-size:11px;font-weight:800}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Customer Support & Retention Agent | OrionPulse AI Workforce</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Production-grade AI Support & Retention Agent by OrionPulse. Transform support from a cost center into a 24/7 revenue engine, lead acquisition channel, and churn prevention system." />
+  <meta name="keywords" content="AI Customer Support, OrionPulse, Autonomous CS Agent, Customer Success AI, Lead Generation, Retention AI, Business Intelligence, Customer Support Automation" />
+  <meta name="author" content="OrionPulse Technologies OPC Private Limited" />
+  
+  <meta property="og:title" content="AI Customer Support & Retention Agent | OrionPulse OS" />
+  <meta property="og:description" content="24/7 Autonomous AI Agent for Instant Resolutions, Churn Prevention, Upsell Detection, and Automated Lead Acquisition." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://orionpulse.co.in/agents/customer-support" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Customer Support Agent | OrionPulse" />
+  <meta name="twitter:description" content="Autonomous Support Intelligence that generates leads and retains revenue 24/7." />
 
-.hero{padding:142px 0 55px;position:relative;overflow:hidden;background:radial-gradient(circle at 79% 17%,rgba(67,95,209,.15),transparent 29%),radial-gradient(circle at 12% 12%,rgba(73,167,180,.10),transparent 25%),var(--bg)}
-.hero:before{content:"";position:absolute;inset:0;opacity:.4;background-image:linear-gradient(rgba(15,36,60,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(15,36,60,.04) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(#000,transparent 86%)}
-.hero-content{position:relative;text-align:center;max-width:1000px;margin:auto}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.82);padding:7px 12px;border-radius:99px;font-size:9px;letter-spacing:.13em;text-transform:uppercase;font-weight:900;color:#536277}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(36,150,107,.10)}
-h1{font-size:clamp(45px,6.5vw,78px);line-height:.98;margin-top:22px}
-.grad{color:transparent;background:linear-gradient(105deg,#243e91,#435fd1 55%,#7185dc);background-clip:text;-webkit-background-clip:text}
-.hero-copy{max-width:740px;margin:21px auto;color:#59697d;font-size:16px}
-.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:25px}
-.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:11px;padding:12px 17px;font-weight:800;font-size:11px;cursor:pointer;transition:.2s}
-.primary{background:var(--blue);color:#fff;box-shadow:0 12px 28px rgba(67,95,209,.20)}
-.primary:hover{transform:translateY(-2px);background:#344eb7}
-.secondary{background:#fff;border:1px solid var(--line);color:var(--ink)}
-.secondary:hover{transform:translateY(-2px)}
+  <!-- Embedded CSS styling for production performance -->
+  <style>
+    /* CSS RESET & VARIABLES */
+    :root {
+      --bg-dark: #05070c;
+      --bg-card: #0d121f;
+      --bg-card-hover: #131b2e;
+      --border: #1e293b;
+      --border-focus: #0047FF;
+      --electric-blue: #0047FF;
+      --electric-blue-glow: rgba(0, 71, 255, 0.35);
+      --cyan-accent: #00f0ff;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --green-success: #10b981;
+      --amber-warning: #f59e0b;
+      --red-danger: #ef4444;
+      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-.dashboard{margin-top:48px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden;text-align:left}
-.dashbar{height:52px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 17px;font-size:10px}
-.dashbrand{font-weight:800}.status{display:flex;align-items:center;gap:7px;color:var(--green);font-weight:800}.status i{width:6px;height:6px;background:var(--green);border-radius:50%}
-.dashbody{display:grid;grid-template-columns:210px 1fr;min-height:500px}
-.sidebar{background:#fbfcfe;border-right:1px solid var(--line);padding:18px 12px}
-.side-label{font-size:8px;color:#9aa4b2;letter-spacing:.14em;text-transform:uppercase;font-weight:900;margin:4px 9px 8px}
-.side-item{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:9px;font-size:10px;font-weight:700;color:#657386;margin-bottom:3px;cursor:pointer}
-.side-item.active{background:#eaf0ff;color:#2948a1}
-.side-item span{width:18px;text-align:center;color:#77869a}
-.side-bottom{margin-top:30px;padding:12px;border:1px solid var(--line);background:#fff;border-radius:12px}
-.side-bottom small{font-size:8px;color:#8793a3}.side-bottom strong{display:block;font-size:13px;margin-top:2px}
-.mainpanel{padding:20px;background:#fff}
-.panelhead{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.panelhead h3{font-size:19px}.panelhead p{font-size:9px;color:#8793a3;margin-top:3px}.launch{padding:9px 12px;font-size:9px}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:17px}
-.metric{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}.metric small{font-size:8px;color:#8995a5}.metric strong{display:block;font:800 21px Manrope;margin-top:3px}.metric em{font-size:8px;color:var(--green);font-style:normal;font-weight:800}
-.prospect-table{margin-top:15px;border:1px solid var(--line);border-radius:14px;overflow:hidden}.tablehead,.prospect{display:grid;grid-template-columns:2.1fr 1.1fr .8fr .8fr .9fr;gap:10px;align-items:center}.tablehead{padding:9px 12px;background:#f8fafc;color:#8b96a5;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.07em}.prospect{padding:12px;border-top:1px solid #edf0f4;font-size:9px}.company{display:flex;align-items:center;gap:9px}.avatar{width:28px;height:28px;border-radius:9px;background:#e9edf5;display:grid;place-items:center;font-weight:900;font-size:9px;color:#4f6075}.company b{display:block;font-size:10px}.company span{color:#8995a5;font-size:8px}.score{font-weight:900}.hot{color:var(--green)}.warm{color:var(--amber)}.cold{color:var(--red)}.pill{display:inline-block;border-radius:99px;padding:4px 7px;background:#eaf8f2;color:#197b52;font-size:7px;font-weight:900}.pill.w{background:#fff4df;color:#96651d}.pill.c{background:#fcebed;color:#a04c56}.action{color:#435fd1;font-weight:900}
-.insight{margin-top:13px;display:grid;grid-template-columns:1fr 1fr;gap:9px}.insight-card{border:1px solid var(--line);border-radius:13px;padding:13px;background:#fbfcfe}.insight-card small{font-size:8px;color:#8b96a5;text-transform:uppercase;font-weight:900;letter-spacing:.08em}.insight-card strong{display:block;font-size:11px;margin-top:4px}.bar{height:5px;background:#e8ecf2;border-radius:99px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--blue);border-radius:99px}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.section{padding:94px 0}.white{background:#fff}.head{text-align:center;max-width:710px;margin:0 auto 42px}.kicker{font-size:9px;color:var(--blue);font-weight:900;letter-spacing:.16em;text-transform:uppercase}.head h2{font-size:clamp(33px,5vw,51px);line-height:1.05;margin-top:8px}.head p{font-size:13px;color:#69788b;margin-top:11px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:23px;box-shadow:0 10px 32px rgba(8,25,45,.045)}.icon{width:40px;height:40px;border-radius:11px;background:#edf1ff;color:#2d4eaa;display:grid;place-items:center;font-weight:900}.card h3{font-size:16px;margin-top:15px}.card p{font-size:10px;color:#7c8899;margin-top:5px}.card ul{list-style:none;margin-top:12px}.card li{font-size:9px;color:#69778a;padding:3px 0}.card li:before{content:"✓";color:var(--green);font-weight:900;margin-right:6px}
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.5;
+    }
 
-.section-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:18px}.dark-card{background:var(--navy);color:#fff;border-radius:22px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden}.dark-card:after{content:"";position:absolute;width:280px;height:280px;right:-150px;top:-170px;border-radius:50%;background:rgba(67,95,209,.24);filter:blur(40px)}.dark-card>*{position:relative}.dark-card h3{font-size:23px}.dark-card p{font-size:11px;color:#9eacbd;margin-top:5px}.icp-row{display:flex;align-items:center;justify-content:space-between;padding:11px 12px;margin-top:8px;border:1px solid #263d58;background:#10253d;border-radius:11px;font-size:9px}.icp-row span{color:#96a6b9}.builder{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px}.builder h3{font-size:18px}.builder>p{font-size:10px;color:#8792a1;margin-top:4px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{margin-top:12px}.field label{display:block;font-size:9px;font-weight:800;color:#657386;margin-bottom:5px}.field input,.field select{width:100%;border:1px solid #dce3eb;border-radius:9px;background:#fbfcfe;padding:9px 10px;outline:none;font-size:10px}.field input:focus,.field select:focus{border-color:#6980d8;box-shadow:0 0 0 3px rgba(67,95,209,.08)}.full{grid-column:1/-1}.checkboxes{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px}.check{border:1px solid #e1e6ed;border-radius:9px;padding:9px;font-size:9px;color:#667589;background:#fbfcfe}.check input{accent-color:var(--blue);margin-right:5px}.form-actions{display:flex;justify-content:flex-end;margin-top:15px}
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
 
-.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}.step{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px 10px;text-align:center}.step b{font-size:8px;color:#8b96a5}.step strong{display:block;font-size:10px;margin-top:5px}.step p{font-size:8px;color:#8994a3;margin-top:3px}
+    /* TYPOGRAPHY & UTILITIES */
+    h1, h2, h3, h4, .brand-font {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
 
-.outreach{display:grid;grid-template-columns:1fr 1fr;gap:18px}.sequence,.email-preview{background:#fff;border:1px solid var(--line);border-radius:21px;padding:24px}.sequence h3,.email-preview h3{font-size:18px}.sequence p,.email-preview p{font-size:10px;color:#8792a1;margin-top:4px}.seq-item{display:grid;grid-template-columns:50px 1fr auto;gap:9px;align-items:center;padding:12px 0;border-bottom:1px solid #edf0f4}.seq-item:last-child{border:0}.day{font-size:8px;font-weight:900;color:#435fd1}.seq-item strong{font-size:10px}.seq-item span{font-size:8px;color:#8994a3}.toggle{width:29px;height:16px;background:#dce3ec;border-radius:99px;position:relative}.toggle:after{content:"";width:12px;height:12px;border-radius:50%;background:#fff;position:absolute;top:2px;left:2px}.toggle.on{background:var(--green)}.toggle.on:after{left:15px}.mail{margin-top:16px;border:1px solid var(--line);border-radius:13px;overflow:hidden}.mailtop{padding:10px;background:#f8fafc;border-bottom:1px solid var(--line);font-size:8px;color:#7d8999}.mailbody{padding:15px;font-size:10px;color:#506074;line-height:1.65}.mailbody b{color:var(--ink)}
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(0, 71, 255, 0.1);
+      border: 1px solid rgba(0, 71, 255, 0.3);
+      color: var(--cyan-accent);
+    }
 
-.integrations{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.integration{background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px}.integration h3{font-size:15px}.integration p{font-size:9px;color:#8591a1;margin-top:4px}.integration .tag{display:inline-block;margin-top:14px;background:#f0f3f7;border-radius:99px;padding:5px 8px;font-size:7px;font-weight:900;color:#667589}.integration .tag.green{background:#eaf8f2;color:#197b52}.integration .tag.blue{background:#edf1ff;color:#304eaa}
+    .badge-live {
+      background: rgba(16, 185, 129, 0.1);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: var(--green-success);
+    }
 
-.cta{padding:62px 25px;background:var(--navy);color:#fff;border-radius:26px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}.cta:before{content:"";position:absolute;width:430px;height:430px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:rgba(67,95,209,.18);filter:blur(65px)}.cta-inner{position:relative}.cta h2{font-size:clamp(35px,5vw,50px)}.cta p{max-width:620px;margin:9px auto 21px;color:#a6b4c5;font-size:12px}.wa{background:var(--green)!important;color:#fff!important;margin-left:7px}
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--green-success);
+      box-shadow: 0 0 8px var(--green-success);
+      animation: pulse 2s infinite;
+    }
 
-footer{border-top:1px solid var(--line);padding:34px 0;color:#7a8797;font-size:9px}.footer{display:flex;justify-content:space-between;gap:15px}.toast{position:fixed;right:20px;bottom:20px;background:#10253d;color:#fff;padding:12px 14px;border-radius:10px;font-size:10px;opacity:0;transform:translateY(10px);transition:.25s;z-index:200;max-width:360px}.toast.show{opacity:1;transform:none}
-@media(max-width:950px){.links{display:none}.dashbody{grid-template-columns:1fr}.sidebar{display:none}.cards{grid-template-columns:1fr 1fr}.section-grid,.outreach{grid-template-columns:1fr}.steps{grid-template-columns:repeat(3,1fr)}.integrations{grid-template-columns:1fr}}
-@media(max-width:650px){.navbtn{display:none}.hero{padding-top:125px}.hero h1{font-size:46px}.demobody{grid-template-columns:1fr}.preview{border-right:0;border-bottom:1px solid var(--line)}.metrics{grid-template-columns:1fr 1fr}.tablehead,.prospect{grid-template-columns:1.7fr .8fr .7fr}.tablehead div:nth-child(4),.tablehead div:nth-child(5),.prospect>div:nth-child(4),.prospect>div:nth-child(5){display:none}.insight,.formgrid,.checkboxes{grid-template-columns:1fr}.full{grid-column:auto}.steps{grid-template-columns:1fr 1fr}.footer{flex-direction:column}}
-</style>
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    /* HEADER & NAVIGATION */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(5, 7, 12, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--electric-blue), var(--cyan-accent));
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .logo-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    .logo-text span {
+      color: var(--text-muted);
+      font-weight: 400;
+      font-size: 0.85rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--electric-blue);
+      color: #fff;
+      box-shadow: 0 0 20px var(--electric-blue-glow);
+    }
+
+    .btn-primary:hover {
+      background: #003be0;
+      box-shadow: 0 0 30px rgba(0, 71, 255, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--border);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--text-muted);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 4rem 2rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-bg-glow {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(circle, var(--electric-blue-glow) 0%, rgba(5,7,12,0) 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin: 1rem 0;
+      background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ARCHITECTURE PIPELINE & WORKFLOW BAR */
+    .pipeline-section {
+      background: rgba(13, 18, 31, 0.6);
+      border-y: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      margin: 1rem 0 3rem;
+    }
+
+    .pipeline-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .pipeline-step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .pipeline-step .step-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(0, 47, 255, 0.2);
+      border: 1px solid var(--electric-blue);
+      color: var(--cyan-accent);
+      display: grid;
+      place-items: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .pipeline-arrow {
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    /* MAIN WORKSPACE LAYOUT */
+    .workspace {
+      max-width: 1400px;
+      margin: 0 auto 4rem;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* SIDEBAR / ONBOARDING CONTROL PANEL */
+    .control-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .panel-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .panel-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-control {
+      background: rgba(5, 7, 12, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.6rem 0.8rem;
+      color: var(--text-main);
+      font-size: 0.875rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--electric-blue);
+      box-shadow: 0 0 8px var(--electric-blue-glow);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    /* DEMO INTERACTIVE SIMULATOR CARD */
+    .agent-stage {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .workspace-tabs {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .tab-btn.active, .tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tab-btn.active {
+      border-bottom: 2px solid var(--electric-blue);
+      border-radius: 6px 6px 0 0;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .card-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .score-value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1;
+    }
+
+    .score-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    /* AGENT LIVE SIMULATION CONSOLE */
+    .console-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      height: 480px;
+      overflow: hidden;
+    }
+
+    .console-header {
+      padding: 0.75rem 1.25rem;
+      background: rgba(5, 7, 12, 0.5);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .console-body {
+      flex: 1;
+      padding: 1.25rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 0.85rem;
+    }
+
+    .chat-msg {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      max-width: 85%;
+    }
+
+    .chat-msg.user {
+      align-self: flex-end;
+    }
+
+    .chat-msg.agent {
+      align-self: flex-start;
+    }
+
+    .msg-bubble {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      line-height: 1.4;
+    }
+
+    .chat-msg.user .msg-bubble {
+      background: var(--electric-blue);
+      color: #fff;
+    }
+
+    .chat-msg.agent .msg-bubble {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .msg-meta {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .reasoning-box {
+      background: rgba(0, 71, 255, 0.05);
+      border-left: 2px solid var(--electric-blue);
+      padding: 0.5rem 0.75rem;
+      font-size: 0.75rem;
+      color: var(--cyan-accent);
+      margin-top: 0.4rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .console-footer {
+      padding: 0.75rem 1.25rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(5, 7, 12, 0.5);
+    }
+
+    /* HOW IT WORKS / TUTORIAL SECTION */
+    .section-title {
+      text-align: center;
+      margin: 4rem 0 1rem;
+    }
+
+    .section-title h2 {
+      font-size: 1.8rem;
+      color: var(--text-main);
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .how-it-works-grid {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .step-badge {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--electric-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* LEAD ACQUISITION & CONVERSION SECTION */
+    .lead-capture-banner {
+      max-width: 1200px;
+      margin: 4rem auto;
+      background: linear-gradient(135deg, rgba(13,18,31,1) 0%, rgba(0,71,255,0.15) 100%);
+      border: 1px solid var(--border-focus);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lead-capture-banner h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .lead-capture-banner p {
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+    }
+
+    .lead-form-inline {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      max-width: 500px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .lead-form-inline input {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #020305;
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem 1.5rem;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      max-width: 320px;
+    }
+
+    .footer-column h4 {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-column a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+
+    .footer-column a:hover {
+      color: var(--electric-blue);
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* TABLES & DATA VISUALIZATIONS */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .data-table th {
+      background: rgba(5, 7, 12, 0.6);
+      color: var(--text-muted);
+      padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+    }
+
+    .data-table td {
+      padding: 0.6rem 0.8rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .data-table tr:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .status-tag {
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .status-tag.high { background: rgba(239, 68, 68, 0.2); color: var(--red-danger); }
+    .status-tag.medium { background: rgba(245, 158, 11, 0.2); color: var(--amber-warning); }
+    .status-tag.low { background: rgba(16, 185, 129, 0.2); color: var(--green-success); }
+  </style>
 </head>
 <body>
 
-<header class="nav">
-<div class="container navin">
-<a class="brand" href="#top"><span class="logo">O</span>OrionPulse</a>
-<nav class="links">
-<a href="#capabilities">Capabilities</a><a href="#prospecting">Prospecting</a><a href="#outreach">Outreach</a><a href="#stack">Stack</a>
-</nav>
-<a class="navbtn" href="#campaign">Launch Campaign</a>
-</div>
-</header>
+  <!-- TOP NAVIGATION HEADER -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo-group">
+        <div class="logo-mark">O</div>
+        <div class="logo-text">ORIONPULSE <span>/ AI WORKFORCE</span></div>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="#overview" class="nav-link">Overview</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#intelligence" class="nav-link">BI Intelligence</a>
+        <a href="#lead-capture" class="nav-link">Acquisition</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
 
-<main id="top">
-<section class="hero">
-<div class="container hero-content">
-<div class="eyebrow"><span class="dot"></span> OrionPulse AI Sales Workforce · Agent 03</div>
-<h1>Find the right prospects.<br><span class="grad">Start better conversations.</span></h1>
-<p class="hero-copy">OrionPulse AI SDR / Prospecting Agent discovers high-fit businesses, researches their opportunities, scores intent and prepares personalized outbound campaigns — so your sales pipeline starts with better prospects.</p>
-<div class="actions"><a class="btn primary" href="#campaign">Launch Prospecting Campaign</a><a class="btn secondary" href="#workflow">See the Workflow</a></div>
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <span class="badge badge-live"><span class="pulse-dot"></span> Agent Ready</span>
+        <a href="#lead-capture" class="btn btn-primary">Deploy to OrionPulse</a>
+      </div>
+    </div>
+  </header>
 
-<div class="dashboard">
-<div class="dashbar"><div class="dashbrand">◈ OrionPulse / AI SDR Command Center</div><div class="status"><i></i> Agent operational</div></div>
-<div class="dashbody">
-<aside class="sidebar">
-<div class="side-label">Workspace</div>
-<div class="side-item active"><span>▦</span>Prospects</div>
-<div class="side-item"><span>⌁</span>ICP Builder</div>
-<div class="side-item"><span>◎</span>Research</div>
-<div class="side-item"><span>◈</span>Opportunity Score</div>
-<div class="side-item"><span>↗</span>Outreach</div>
-<div class="side-item"><span>↻</span>Sequences</div>
-<div class="side-item"><span>✉</span>Replies</div>
-<div class="side-item"><span>◷</span>Meetings</div>
-<div class="side-item"><span>⌁</span>Analytics</div>
-<div class="side-bottom"><small>Campaign status</small><strong>Running</strong><small>42 prospects researched</small></div>
-</aside>
-<div class="mainpanel">
-<div class="panelhead"><div><h3>Prospect Intelligence</h3><p>Highest-fit opportunities discovered by your AI SDR</p></div><button class="btn primary launch" onclick="document.getElementById('campaign').scrollIntoView({behavior:'smooth'})">+ Launch Campaign</button></div>
-<div class="metrics">
-<div class="metric"><small>Prospects Found</small><strong>248</strong><em>+32 today</em></div>
-<div class="metric"><small>High Fit</small><strong>64</strong><em>26% of list</em></div>
-<div class="metric"><small>Outreach Ready</small><strong>51</strong><em>+11 today</em></div>
-<div class="metric"><small>Reply Rate</small><strong>18.4%</strong><em>+4.2%</em></div>
-</div>
-<div class="prospect-table">
-<div class="tablehead"><div>Prospect</div><div>Opportunity</div><div>Score</div><div>Fit</div><div>Action</div></div>
-<div class="prospect"><div class="company"><div class="avatar">MC</div><div><b>Manipur Care Clinic</b><span>Healthcare · Imphal</span></div></div><div>Weak web conversion</div><div class="score hot">94</div><div><span class="pill">HOT</span></div><div class="action">Research →</div></div>
-<div class="prospect"><div class="company"><div class="avatar">AH</div><div><b>Atlas Home Studio</b><span>Interior · Bengaluru</span></div></div><div>No lead capture</div><div class="score hot">89</div><div><span class="pill">HOT</span></div><div class="action">Research →</div></div>
-<div class="prospect"><div class="company"><div class="avatar">NP</div><div><b>NorthPeak Properties</b><span>Real Estate · Guwahati</span></div></div><div>Low local visibility</div><div class="score warm">76</div><div><span class="pill w">WARM</span></div><div class="action">Research →</div></div>
-<div class="prospect"><div class="company"><div class="avatar">BT</div><div><b>BrightTable Restaurant</b><span>Hospitality · Shillong</span></div></div><div>Inactive content</div><div class="score warm">71</div><div><span class="pill w">WARM</span></div><div class="action">Research →</div></div>
-</div>
-<div class="insight">
-<div class="insight-card"><small>Campaign health</small><strong>High-fit prospect density · 26%</strong><div class="bar"><i style="width:74%"></i></div></div>
-<div class="insight-card"><small>AI recommendation</small><strong>Prioritize businesses with weak conversion paths</strong><div class="bar"><i style="width:86%"></i></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <!-- HERO SECTION -->
+  <section class="hero" id="overview">
+    <div class="hero-bg-glow"></div>
+    <span class="badge">CATEGORY: CUSTOMER SUPPORT AI AGENTS</span>
+    <h1>AI Customer Support & Retention Intelligence Agent</h1>
+    <p>
+      An autonomous 24/7 digital employee engineered to instantly resolve complex support queries, analyze customer sentiment in real time, identify upsell opportunities, and capture high-intent leads directly into your business growth pipeline.
+    </p>
+    <div class="hero-cta-group">
+      <button class="btn btn-primary" onclick="scrollToDemo()">Test Autonomous Simulator</button>
+      <a href="#how-it-works" class="btn btn-secondary">See Business Intelligence Flow</a>
+    </div>
+  </section>
 
-<section class="section" id="capabilities">
-<div class="container">
-<div class="head"><div class="kicker">Agent Capabilities</div><h2>An SDR that does more than find names.</h2><p>Turn raw prospecting into a repeatable intelligence and outreach system.</p></div>
-<div class="cards">
-<article class="card"><div class="icon">⌕</div><h3>Prospect Finder</h3><p>Define an ideal customer profile and discover businesses that match it.</p><ul><li>Industry & location</li><li>Company size</li><li>Business signals</li></ul></article>
-<article class="card"><div class="icon">◎</div><h3>AI Researcher</h3><p>Build a concise intelligence profile for every prospect.</p><ul><li>Website analysis</li><li>Services & positioning</li><li>Digital presence</li></ul></article>
-<article class="card"><div class="icon">◈</div><h3>Opportunity Detector</h3><p>Find problems your service can realistically solve.</p><ul><li>Conversion gaps</li><li>SEO opportunities</li><li>Automation gaps</li></ul></article>
-<article class="card"><div class="icon">✦</div><h3>ICP Scoring</h3><p>Rank prospects so your sales effort goes to the strongest opportunities first.</p><ul><li>Fit score</li><li>Intent signals</li><li>Priority tiers</li></ul></article>
-<article class="card"><div class="icon">↗</div><h3>Personalized Outreach</h3><p>Create relevant first-touch messages based on prospect intelligence.</p><ul><li>Email drafts</li><li>Value proposition</li><li>Personalized hooks</li></ul></article>
-<article class="card"><div class="icon">↻</div><h3>Reply Intelligence</h3><p>Classify replies and route interested prospects into the next sales agent.</p><ul><li>Interested</li><li>Pricing / demo</li><li>Not now / wrong person</li></ul></article>
-</div>
-</div>
-</section>
-
-<section class="section white" id="prospecting">
-<div class="container">
-<div class="head"><div class="kicker">Campaign Intelligence</div><h2>Tell the agent who you want to sell to.</h2><p>Build an ICP once, then let the prospecting engine search, research and prioritize.</p></div>
-<div class="section-grid">
-<div class="dark-card">
-<h3>Example ICP: Local service businesses</h3>
-<p>The agent looks for commercial signals — not just company names.</p>
-<div class="icp-row"><b>Industry</b><span>Clinics · Restaurants · Real Estate</span></div>
-<div class="icp-row"><b>Location</b><span>Manipur · Northeast India</span></div>
-<div class="icp-row"><b>Team size</b><span>5–100 employees</span></div>
-<div class="icp-row"><b>Website signal</b><span>Weak / outdated / no conversion CTA</span></div>
-<div class="icp-row"><b>Growth signal</b><span>Active business · low digital execution</span></div>
-<div class="icp-row"><b>Priority</b><span>High pain + high service fit</span></div>
-</div>
-<div class="builder" id="campaign">
-<h3>Launch a prospecting campaign</h3>
-<p>Configure the first version of your AI SDR campaign.</p>
-<form id="campaignForm">
-<div class="formgrid">
-<div class="field"><label>Target industry</label><input name="industry" value="Local service businesses"></div>
-<div class="field"><label>Target location</label><input name="location" value="Manipur, Northeast India"></div>
-<div class="field"><label>Minimum opportunity score</label><select name="score"><option>90+</option><option>80+</option><option selected>70+</option><option>60+</option></select></div>
-<div class="field"><label>Prospect volume</label><select name="volume"><option>25 prospects</option><option selected>50 prospects</option><option>100 prospects</option><option>250 prospects</option></select></div>
-<div class="field full"><label>Signals to prioritize</label><div class="checkboxes"><label class="check"><input type="checkbox" checked> Weak website / conversion</label><label class="check"><input type="checkbox" checked> Poor local SEO</label><label class="check"><input type="checkbox" checked> Inactive content</label><label class="check"><input type="checkbox" checked> No AI automation</label></div></div>
-</div>
-<div class="form-actions"><button class="btn primary" type="submit">Launch AI Prospecting →</button></div>
-</form>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section" id="workflow">
-<div class="container">
-<div class="head"><div class="kicker">Agent Workflow</div><h2>From an ICP to a sales-ready prospect.</h2><p>The AI SDR continuously turns prospecting inputs into actionable outbound opportunities.</p></div>
-<div class="steps">
-<div class="step"><b>01</b><strong>Define ICP</strong><p>Who should we target?</p></div>
-<div class="step"><b>02</b><strong>Discover</strong><p>Find matching businesses</p></div>
-<div class="step"><b>03</b><strong>Research</strong><p>Understand each company</p></div>
-<div class="step"><b>04</b><strong>Score</strong><p>Rank fit & opportunity</p></div>
-<div class="step"><b>05</b><strong>Personalize</strong><p>Write relevant outreach</p></div>
-<div class="step"><b>06</b><strong>Route</strong><p>Send replies to sales</p></div>
-</div>
-</div>
-</section>
-
-<section class="section white" id="outreach">
-<div class="container">
-<div class="head"><div class="kicker">Outbound Engine</div><h2>Research first. Outreach second.</h2><p>Personalization should be generated from real prospect intelligence rather than generic templates.</p></div>
-<div class="outreach">
-<div class="sequence">
-<h3>AI Outreach Sequence</h3><p>Example five-touch sequence for a high-fit prospect.</p>
-<div class="seq-item"><div class="day">DAY 0</div><div><strong>Personalized first email</strong><span>Problem-led introduction</span></div><div class="toggle on"></div></div>
-<div class="seq-item"><div class="day">DAY 2</div><div><strong>Value follow-up</strong><span>One useful observation</span></div><div class="toggle on"></div></div>
-<div class="seq-item"><div class="day">DAY 5</div><div><strong>Mini audit / insight</strong><span>Specific improvement opportunity</span></div><div class="toggle on"></div></div>
-<div class="seq-item"><div class="day">DAY 9</div><div><strong>Case study / proof</strong><span>Relevant result or example</span></div><div class="toggle on"></div></div>
-<div class="seq-item"><div class="day">DAY 14</div><div><strong>Breakup message</strong><span>Low-pressure close</span></div><div class="toggle"></div></div>
-</div>
-<div class="email-preview">
-<h3>AI-generated outreach</h3><p>Example based on a detected website conversion gap.</p>
-<div class="mail">
-<div class="mailtop">Subject: A quick idea for Manipur Care Clinic</div>
-<div class="mailbody">
-Hi <b>Rahul</b>,<br><br>
-I noticed Manipur Care Clinic has a strong local presence, but the website currently makes it difficult for a visitor to take the next step.<br><br>
-We help service businesses add <b>AI-powered lead capture and conversion systems</b> that turn more website visitors into enquiries.<br><br>
-I put together a few ideas specifically for your clinic. Would you be open to a quick look?<br><br>
-Best,<br><b>OrionPulse</b>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section" id="stack">
-<div class="container">
-<div class="head"><div class="kicker">Sales Infrastructure</div><h2>Built to hand off to the rest of OrionPulse.</h2><p>The SDR should not operate alone. Its job is to feed the next agents with context.</p></div>
-<div class="integrations">
-<div class="integration"><h3>AI Lead Qualification</h3><p>Pass prospect research, opportunity score and intent context into your qualification agent.</p><span class="tag blue">NEXT AGENT</span></div>
-<div class="integration"><h3>AI Sales Agent</h3><p>When a prospect replies positively, route the conversation into your sales workflow.</p><span class="tag green">CONVERSION</span></div>
-<div class="integration"><h3>AI Follow-Up Agent</h3><p>Automatically manage unanswered prospects and keep the pipeline moving.</p><span class="tag">PERSISTENCE</span></div>
-<div class="integration"><h3>Email Infrastructure</h3><p>Prepare outbound messages and reply notifications through your production email backend.</p><span class="tag">OUTBOUND</span></div>
-<div class="integration"><h3>WhatsApp Handoff</h3><p>Use your OrionPulse WhatsApp route for high-intent human handoff where appropriate.</p><span class="tag green">+91 98629 03690</span></div>
-<div class="integration"><h3>Lead Database</h3><p>Store prospect profiles, scores, outreach status, replies and meeting outcomes.</p><span class="tag blue">CRM READY</span></div>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-<div class="cta"><div class="cta-inner">
-<h2>Build an outbound engine, not a contact list.</h2>
-<p>OrionPulse AI SDR turns prospect discovery into intelligence, personalized outreach and qualified sales opportunities.</p>
-<a class="btn primary" href="#campaign">Launch Your Campaign</a>
-<a class="btn wa" target="_blank" href="https://wa.me/919862903690?text=Hi%20OrionPulse%2C%20I%27d%20like%20to%20build%20an%20AI%20SDR%20%2F%20Prospecting%20Agent.">WhatsApp OrionPulse</a>
-</div></div>
-</div>
-</section>
-</main>
-
-<footer><div class="container footer"><span>© 2026 OrionPulse · AI SDR / Prospecting Agent</span><span>Discover · Research · Score · Engage · Convert</span></div></footer>
-<div class="toast" id="toast"></div>
-
-<script>
-const toast=document.getElementById("toast");
-function notify(msg){toast.textContent=msg;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),4500)}
-document.getElementById("campaignForm").addEventListener("submit",async function(e){
-e.preventDefault();
-const data=Object.fromEntries(new FormData(this).entries());
-const checked=[...this.querySelectorAll('input[type="checkbox"]:checked')].map(x=>x.parentElement.textContent.trim());
-const payload={agent:"AI SDR / Prospecting Agent",...data,signals:checked,destinationEmail:"service@orionpulse.co.in",source:location.href,submittedAt:new Date().toISOString()};
-try{
-const r=await fetch("/api/sdr-campaign",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
-if(!r.ok)throw new Error();
-notify("Campaign request captured. Your OrionPulse backend can now launch the SDR workflow.");
-}catch{
-const subject=encodeURIComponent("New OrionPulse AI SDR Campaign Request");
-const body=encodeURIComponent(
-"ORIONPULSE AI SDR CAMPAIGN REQUEST\n\n"+
-"Industry: "+(data.industry||"")+"\nLocation: "+(data.location||"")+
-"\nMinimum score: "+(data.score||"")+"\nVolume: "+(data.volume||"")+
-"\nSignals: "+checked.join(", ")+"\n\nSource: "+location.href
-);
-location.href="mailto:service@orionpulse.co.in?subject="+subject+"&body="+body;
-notify("Opening your email client with the campaign request.");
-}
-});
-</script>
-</body>
-</html>
+  <!-- ARCHITECTURE PIPELINE BAR -->
+  <section class="pipeline-section">
+    <div class="pipeline-container">
+      <div class="pipeline-step"><span class="step-num">1</span> Information Gathering</div>
+      <span class="pipeline-arrow">→</span>
+      <div class="pipeline-step"><span class="step-num">2</span> Knowledge & Framework Analysis</div>
+      <span class="pipeline-arrow">→</span>
+      <div class="pipeline-step"><span class="step-num">3</span> Autonomous Reasoning</div>
+      <span class="pipeline-arrow">→</span>
+      <div class="pipeline-step"><span class="step-num">4</span> Action & Ticket Execution</div>
+      <span class="pipeline-arrow">→</span>
+      <div class="pipeline-step"><span class="st
